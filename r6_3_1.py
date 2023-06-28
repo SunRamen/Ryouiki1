@@ -210,9 +210,8 @@ def human():
                         person_data2["pose_keypoints_2d"][3*22 + 1]/2,
                         person_data2["pose_keypoints_2d"][3*23 + 0]/2,
                         person_data2["pose_keypoints_2d"][3*23 + 1]/2)
-    print(person_data1["pose_keypoints_2d"][0])
     n += 1
-    root.after(10,human)
+    root.after(3,human)
 
-root.after(10,human)
+root.after(3,human)
 root.mainloop()
