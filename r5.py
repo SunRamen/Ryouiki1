@@ -6,7 +6,7 @@ root = tk.Tk()
 root.geometry("600x500")
 
 #canvas
-canvas = tk.Canvas(root, width = 600, height = 400, bg = "white")
+canvas = tk.Canvas(root, width = 600, height = 400, bg = "blue")
 canvas.place(x=0, y=0)
 
 #circle
