@@ -33,6 +33,8 @@ def human():
     person_data1 = people1[n]
     person_data2 = people2[n]   
 
+    canvas.delete('all')
+
     canvas.create_rectangle(0,0,800,600,fill = 'White')
 
     for i in range(4):
@@ -211,7 +213,7 @@ def human():
                         person_data2["pose_keypoints_2d"][3*23 + 0]/2,
                         person_data2["pose_keypoints_2d"][3*23 + 1]/2)
     n += 1
-    root.after(3,human)
+    root.after(10,human)
 
-root.after(3,human)
+root.after(10,human)
 root.mainloop()
