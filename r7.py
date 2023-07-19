@@ -88,29 +88,30 @@ lst = list(0 for n in range(0,470))
 
 with zipfile.ZipFile('labels.zip','r') as zip_file: 
   for name in zip_file.namelist():
-    if '45353-640' in name:
+    if '45353-640_469' in name:
       with zip_file.open(name,'r') as sample:
-              
+        c1=0
+        c2=0      
         for n in sample:
           data = sample.readlines() 
-          
           data = str(data)
-          data=data.split('\n')
           for l in data:
             l = l.split(' ')
-            print(l)
-            c=0
+            for n in data:
+              c1 += 1
+            
             for m in l:
-              c +=1 
+              c2 += 1 
         
-            c=c/6
-            c=int(c)
+            c2=c2/6
+            c2=int(c2)
+            print(c2)
 
-            for i in l:
-              for j in range(0,c):
-                result = re.sub(r"\D","",l[6*j])
-                lst[int(result)] +=1
-          
+            for j in range(0,c2):
+              result = re.sub(r"\D","",l[6*j]) 
+              lst[int(result)] += 1
+print(c1)
+print(lst)
 for i in range(0,80):
   if lst[i] > 0:
     print(yolo_dict[i])
